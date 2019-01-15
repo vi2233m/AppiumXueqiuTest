@@ -22,7 +22,8 @@ public class MainPage extends BasePage {
     }
 
     public OptionalPage gotoOpational(){
-        find(locate("tab_icon"));
+        Driver.getCurrentDriver().findElement(By.xpath("//android.widget.TextView[@text='自选']")).click();
+//        find(By.id("tab_icon")).click();
         return new OptionalPage();
     }
 

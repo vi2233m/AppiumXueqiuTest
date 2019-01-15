@@ -9,9 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.touch.TouchActions;
 
 public class OptionalPage extends BasePage{
-    private By addId = locate("id/image");
-    private By searchId = locate("id/action_create_cube");
-    private By stockXpah = By.xpath("//*[contains(@resource-id, 'id/listview')]/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout[1]");
+    private By addId = locate("image");
+    private By searchId = locate("action_create_cube");
+    private By stockXpah = By.xpath("//*[contains(@resource-id, 'listview')]/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout[1]");
 
     public SearchPage add(){
         find(addId).click();
@@ -20,14 +20,15 @@ public class OptionalPage extends BasePage{
 
     public SearchPage gotoSearch(){
         find(searchId).click();
+//        find(By.id("action_create_cube")).click();
         return new SearchPage();
     }
 
     public StockEditPage longPress(){
         TouchActions ta = new TouchActions(Driver.getCurrentDriver());
         AndroidElement el = (AndroidElement)find(stockXpah);
-        ta.longPress(el).wait(10000).perform();//长按10s
-
+        ta.longPress(el).perform();//长按10s
+        return new StockEditPage();
     }
 
 
