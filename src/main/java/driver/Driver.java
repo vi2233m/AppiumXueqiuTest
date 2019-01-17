@@ -30,7 +30,7 @@ public class Driver {
         }
 
         driver = new AndroidDriver(remoteUrl, desiredCapabilities);
-        driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     public static AndroidDriver<AndroidElement> getCurrentDriver(){

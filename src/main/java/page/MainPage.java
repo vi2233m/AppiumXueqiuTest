@@ -1,6 +1,7 @@
 package page;
 import driver.Driver;
 import org.openqa.selenium.By;
+import util.WaitElement;
 
 public class MainPage extends BasePage {
     By profile=By.id("user_profile_icon");
@@ -22,8 +23,11 @@ public class MainPage extends BasePage {
     }
 
     public OptionalPage gotoOpational(){
-        Driver.getCurrentDriver().findElement(By.xpath("//android.widget.TextView[@text='自选']")).click();
+        By zixuan = By.xpath("//android.widget.TextView[@text='自选']");
+//        Driver.getCurrentDriver().findElement(By.xpath("//android.widget.TextView[@text='自选']")).click();
 //        find(By.id("tab_icon")).click();
+        WaitElement waitElement = new WaitElement();
+        waitElement.waitAndFindElement(zixuan);
         return new OptionalPage();
     }
 
