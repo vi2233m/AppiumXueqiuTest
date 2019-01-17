@@ -38,6 +38,7 @@ public class OptionalPage extends BasePage{
 
     public SearchPage add(){
         find(addId).click();
+        System.out.println("git test");
         return new SearchPage();
     }
 
