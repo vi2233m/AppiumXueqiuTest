@@ -1,1 +1,2 @@
-# AppiumTesting7
+# AppiumXueqiuTest
+- appium 自动化测试
